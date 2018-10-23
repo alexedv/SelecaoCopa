@@ -1,0 +1,28 @@
+﻿ <!-- ~/Views/Selecoes/Delete.cshtml -->
+@model K19_CopaDoMundo.Models.Selecao
+
+<div class="card">
+    <h2 class="card-header">Remoção de Seleção</h2>
+
+    <div class="card-body">
+        <h4>Você tem certeza que deseja remover esta seleção?</h4>
+
+        <div class="display-label">
+            <b>Pais:</b>
+            @Html.DisplayFor(model => model.Pais)            
+        </div>
+
+        <div class="display-label">
+            <b>Técnico: </b>
+            @Html.DisplayFor(model => model.Tecnico)
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            <p>
+                <input type="submit" value="Delete" /> |
+                @Html.ActionLink("Listagem de Seleções", "Index")
+            </p>
+        }
+     </div>
+  </div>

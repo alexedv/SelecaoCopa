@@ -1,0 +1,37 @@
+﻿@model K19_CopaDoMundo.Models.Jogador
+@{
+    ViewBag.Title = "Remoção do Jogador";
+}
+<div class="card">
+    <h2 class="card-header">Remoção do Jogador</h2>
+    <div class="card-body">
+        <h4>Você tem certeza que deseja remover este jogador?</h4>
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.Nome): </b>            
+                @Html.DisplayFor(model => model.Nome)
+            </div>
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.Posicao): </b>            
+                @Html.DisplayFor(model => model.Posicao)
+            </div>
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.Nascimento): </b>            
+                @Html.DisplayFor(model => model.Nascimento)
+            </div>
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.Altura): </b>            
+                @Html.DisplayFor(model => model.Altura)
+            </div>
+            <div class="display-label">
+                <b>@Html.DisplayNameFor(model => model.SelecaoId): </b>            
+                @Html.DisplayFor(model => model.SelecaoId)
+            </div>        
+        @using (Html.BeginForm())
+        {
+            <p>
+                <input type="submit" value="Delete" /> |
+                @Html.ActionLink("Listagem de Jogadores", "Index")
+            </p>
+        }
+    </div>
+</div>

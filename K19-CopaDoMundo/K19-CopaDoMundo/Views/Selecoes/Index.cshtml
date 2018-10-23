@@ -1,0 +1,40 @@
+﻿<!-- ~/Views/Selecoes/Index.cshtml -->
+@model IEnumerable<K19_CopaDoMundo.Models.Selecao>
+
+<div class="card">
+    <h2 class="card-header">Listagem de Seleção</h2>
+    <div class="card-body">
+        <p>
+            @Html.ActionLink("Cadastrar Nova Seleção", "Create")
+        </p>
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    Pais
+                </th>
+                <th>
+                    Tecnico
+                </th>
+                <th>
+
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tecnico)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Excluir", "Delete", new { id = item.Id },
+                  new { @class = "btn btn-primary" })
+                    </td>
+                </tr>
+            }
+        </table>
+      </div>
+    </div>

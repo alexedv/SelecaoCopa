@@ -1,0 +1,54 @@
+﻿@model K19_CopaDoMundo.Models.Jogador
+@{
+    ViewBag.Title = "Create";
+}
+<div class="card">
+    <h2 class="card-header">Cadastro de Jogador</h2>
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)           
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Nome)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Nome)
+                    @Html.ValidationMessageFor(model => model.Nome)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Posicao)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Posicao)
+                    @Html.ValidationMessageFor(model => model.Posicao)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Nascimento)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Nascimento)
+                    @Html.ValidationMessageFor(model => model.Nascimento)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Altura)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Altura)
+                    @Html.ValidationMessageFor(model => model.Altura)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.SelecaoId)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("SelecaoId", string.Empty)
+                    @Html.ValidationMessageFor(model => model.SelecaoId)
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary" value="Create">Cadastrar</button>
+                </div>
+        }
+        <div>
+            @Html.ActionLink("Listagem de Jogadores", "Index")
+        </div>
+    </div>
+</div>
